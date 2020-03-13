@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/cardview_dark_background"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.SearchFragment">
+
+    <EditText
+        android:id="@+id/search_team_edittext"
+        android:padding="@dimen/search_edit_padding"
+        android:drawablePadding="@dimen/search_edit_padding"
+        android:drawableStart="@drawable/default_search_symbol"
+        android:drawableEnd="@drawable/cancel"
+        android:layout_margin="@dimen/search_margin"
+        android:hint="@string/search_edit_hint"
+        android:background="@drawable/round_border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/team_list"
+        android:padding="@dimen/recyclerview_padding"
+        android:background="@drawable/round_border"
+        android:layout_margin="@dimen/recyclerview_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/team_item"/>
+
+
+</LinearLayout>

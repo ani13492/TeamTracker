@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Team Tracker</string>
+    <string name="base_url">https://www.thesportsdb.com/api/v1/json/1/</string>
+
+    <string name="search_edit_hint">Enter your favorite team</string>
+    <string name="team_name_label">Team</string>
+    <string name="team_sport_label">Sport</string>
+</resources>
