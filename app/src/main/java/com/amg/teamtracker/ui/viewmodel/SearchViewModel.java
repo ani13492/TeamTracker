@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.amg.teamtracker.api.ApiService;
+import com.amg.teamtracker.data.model.Results;
 import com.amg.teamtracker.data.model.Team;
 import com.amg.teamtracker.data.model.Teams;
 import com.amg.teamtracker.di.AppComponent;
@@ -35,6 +36,7 @@ public class SearchViewModel extends AndroidViewModel {
     }
 
     private final MutableLiveData<Teams> teamsMutableLiveData = new MutableLiveData<>();
+    private final MutableLiveData<Results> teamHistoryMutableLiveData = new MutableLiveData<>();
 
     public void setTeams(Teams teams) {
         teamsMutableLiveData.setValue(teams);
@@ -44,10 +46,18 @@ public class SearchViewModel extends AndroidViewModel {
         return teamsMutableLiveData;
     }
 
+    public void setTeamHistory(Results results) { teamHistoryMutableLiveData.setValue(results); }
+
+    public LiveData<Results> getTeamHistory()   { return teamHistoryMutableLiveData; }
+
+
+    /**
+     * Get a list of all teams that match the user provided team name
+     * @param teamName
+     */
     public void searchTeam(String teamName)    {
-        MutableLiveData<Teams> teams = new MutableLiveData<>();
-        Call<Teams> response = apiService.searchTeam(teamName);
-        response.enqueue(new Callback<Teams>() {
+        Call<Teams> enteredTeam = apiService.searchTeam(teamName);
+        enteredTeam.enqueue(new Callback<Teams>() {
             @Override
             public void onResponse(Call<Teams> call, Response<Teams> response) {
                 if(response.isSuccessful() && response.body() != null)  {
@@ -60,6 +70,30 @@ public class SearchViewModel extends AndroidViewModel {
 
             @Override
             public void onFailure(Call<Teams> call, Throwable t) {
+
+            }
+        });
+    }
+
+    /**
+     * Get Team history of team based on team's id
+     * @param teamId
+     */
+    public void getTeamHistory(String teamId)   {
+        Call<Results> teamHistory = apiService.getTeamHistory(teamId);
+        teamHistory.enqueue(new Callback<Results>() {
+            @Override
+            public void onResponse(Call<Results> call, Response<Results> response) {
+                if(response.isSuccessful() &&  response.body() != null) {
+                    setTeamHistory(response.body());
+                }
+                else {
+                    Toasty.error(getApplication(),"Error").show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Results> call, Throwable t) {
 
             }
         });

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.TeamHistoryFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/team_history_list"
+        android:layout_margin="@dimen/recyclerview_margin"
+        android:background="@drawable/round_border_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/team_history_item"/>
+
+</FrameLayout>

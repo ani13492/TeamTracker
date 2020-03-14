@@ -654,4 +654,22 @@ public class Result {
     public void setStrLocked(String strLocked) {
         this.strLocked = strLocked;
     }
+
+    public String getHomeGoalDetails() {
+        if(getStrHomeGoalDetails() != null) {
+            return getStrHomeGoalDetails().replace(';', '\n');
+        }
+        return null;
+    }
+
+    public String getAwayGoalDetails() {
+        if(getStrAwayGoalDetails() != null) {
+            return getStrAwayGoalDetails().replace(';', '\n');
+        }
+        return null;
+    }
+
+    public String getEventScore()   {
+        return String.format("%s     :     %s", getIntHomeScore(), getIntAwayScore());
+    }
 }
