@@ -61,7 +61,7 @@ class TeamHistoryViewHolder extends RecyclerView.ViewHolder {
     public void bindResult(Result result)   {
         if(result != null)  {
             if(result.getStrLeague() != null)   leagueName.setText(result.getStrLeague());
-            if(result.getStrDate() != null)   eventDate.setText(result.getDateEvent());
+            if(result.getDateEvent() != null)   eventDate.setText(result.getDateEvent());
             if(result.getStrEvent() != null)   eventName.setText(result.getStrEvent());
             if(result.getEventScore() != null)   eventScore.setText(result.getEventScore());
             if(result.getHomeGoalDetails() != null)   homeScorers.setText(result.getHomeGoalDetails());

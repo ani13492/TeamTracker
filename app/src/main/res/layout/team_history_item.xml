@@ -14,7 +14,6 @@
         <LinearLayout
             android:id="@+id/league_date_container"
             android:background="@drawable/round_border_dark"
-            android:paddingStart="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -24,14 +23,15 @@
                 android:id="@+id/league_name"
                 style="@style/MyTextView"
                 android:textColor="#ffffff"
-                android:textSize="@dimen/medium_text"
+                android:paddingStart="10dp"
+                android:textSize="@dimen/small_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <!-- Event Date -->
             <TextView
                 android:id="@+id/event_date"
-                android:textSize="@dimen/medium_text"
+                android:textSize="@dimen/small_text"
                 style="@style/MyTextView"
                 android:textColor="#ffffff"
                 android:layout_width="wrap_content"

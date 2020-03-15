@@ -496,9 +496,6 @@ public class Result {
     }
 
     public String getStrDate() {
-        if(strDate != null && strDate.contains("-"))    {
-            strDate = strDate.replace('-','/');
-        }
         return strDate;
     }
 
