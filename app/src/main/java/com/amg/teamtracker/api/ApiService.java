@@ -12,6 +12,7 @@ public interface ApiService {
     @GET("searchteams.php")
     Call<Teams> searchTeam(@Query("t") String team);
 
+    // Get last 5 game results of team {id}
     @GET("eventslast.php")
     Call<Results> getTeamHistory(@Query("id") String id);
 }

@@ -2,12 +2,12 @@
 <resources>
     <dimen name="search_margin">16dp</dimen>
     <dimen name="search_edit_padding">8dp</dimen>
-    <dimen name="recyclerview_margin">15dp</dimen>
+    <dimen name="recyclerview_margin">8dp</dimen>
     <dimen name="recyclerview_padding">4dp</dimen>
 
     <!-- TextSizes-->
     <dimen name="small_text">12sp</dimen>
-    <dimen name="medium_text">15sp</dimen>
-    <dimen name="large_text">25sp</dimen>
+    <dimen name="medium_text">18sp</dimen>
+    <dimen name="large_text">22sp</dimen>
 
 </resources>

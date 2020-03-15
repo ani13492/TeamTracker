@@ -19,14 +19,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/team_list"
-        android:padding="@dimen/recyclerview_padding"
-        android:background="@drawable/round_border"
+    <TextView
+        android:id="@+id/filler_text"
+        android:textColor="#ccff00"
+        android:gravity="center"
+        android:text="@string/filler_text"
+        android:textSize="@dimen/medium_text"
         android:layout_margin="@dimen/recyclerview_margin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/team_item"/>
+        android:layout_height="wrap_content" />
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:indeterminateOnly="true"
+            android:visibility="gone"
+            android:translationZ="2dp"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/team_list"
+            android:padding="@dimen/recyclerview_padding"
+            android:background="@drawable/round_border_dark"
+            android:layout_margin="@dimen/recyclerview_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/team_item"/>
+    </RelativeLayout>
 
 </LinearLayout>

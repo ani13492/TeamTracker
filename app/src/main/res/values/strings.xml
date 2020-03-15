@@ -1,8 +1,11 @@
 <resources>
-    <string name="app_name">Liverpool</string>
+    <string name="app_name">Team Tracker</string>
     <string name="base_url">https://www.thesportsdb.com/api/v1/json/1/</string>
 
     <string name="search_edit_hint">Enter your favorite team</string>
     <string name="team_name_label">Team</string>
     <string name="team_sport_label">Sport</string>
+    <string name="team_history_fragment">TEAM_HISTORY_FRAGMENT</string>
+    <string name="filler_text">Been too busy with work and missed out on your favorite team\'s past games?\n\nDon\'t worry, we got you covered.\n\nEnter your favorite sports team in the search bar above and get a quick sneak peek of their performance in the last few games.</string>
+    <string name="vs_text_label">vs</string>
 </resources>

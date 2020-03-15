@@ -11,8 +11,6 @@ import com.amg.teamtracker.R;
 import com.amg.teamtracker.data.model.Result;
 import com.amg.teamtracker.data.model.Results;
 
-import es.dmoral.toasty.Toasty;
-
 public class TeamHistoryAdapter extends RecyclerView.Adapter<TeamHistoryViewHolder> {
 
     private Results teamHistoryResults;
@@ -54,16 +52,16 @@ class TeamHistoryViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         this.leagueName = itemView.findViewById(R.id.league_name);
         this.eventDate = itemView.findViewById(R.id.event_date);
-        this.eventName = itemView.findViewById(R.id.event_name);
         this.eventScore = itemView.findViewById(R.id.event_score);
         this.homeScorers = itemView.findViewById(R.id.home_scorers);
         this.awayScorers = itemView.findViewById(R.id.away_scorers);
+        this.eventName = itemView.findViewById(R.id.event_name);
     }
 
     public void bindResult(Result result)   {
         if(result != null)  {
             if(result.getStrLeague() != null)   leagueName.setText(result.getStrLeague());
-            if(result.getStrDate() != null)   eventDate.setText(result.getStrDate());
+            if(result.getStrDate() != null)   eventDate.setText(result.getDateEvent());
             if(result.getStrEvent() != null)   eventName.setText(result.getStrEvent());
             if(result.getEventScore() != null)   eventScore.setText(result.getEventScore());
             if(result.getHomeGoalDetails() != null)   homeScorers.setText(result.getHomeGoalDetails());

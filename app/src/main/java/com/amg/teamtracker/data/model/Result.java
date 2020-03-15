@@ -496,6 +496,9 @@ public class Result {
     }
 
     public String getStrDate() {
+        if(strDate != null && strDate.contains("-"))    {
+            strDate = strDate.replace('-','/');
+        }
         return strDate;
     }
 
@@ -670,6 +673,10 @@ public class Result {
     }
 
     public String getEventScore()   {
+        if(getIntHomeScore() == null && getIntAwayScore() == null)  {
+            setIntHomeScore("0");
+            setIntAwayScore("0");
+        }
         return String.format("%s     :     %s", getIntHomeScore(), getIntAwayScore());
     }
 }
